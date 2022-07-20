@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CO-OP | Sign Up</title>
+    <link rel="icon" href="/static/imgs/co-op.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/style.css' )}} />
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/signUp_style.css' )}} />
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        $(function () {
+            $("#header").load("header");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="register" class="container primary-bg mt-5 p-2">
+        <h3 class="mt-4">Welcome to CO-OP. Please Register below.</h3>
+        <form action="/signUp" method="POST">
+            <div class="fill_this container mt-5 mb-5 p-4">
+                <div id="fname-form" class="field">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input class="form-control" type="text" name="fname" placeholder="First Name" required>
+                </div>
+
+                <div id="lname-form" class="field">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input class="form-control" type="text" name="lname" placeholder="Last Name" required>
+                </div>
+
+                <div id="email-form" class="field">
+                    <label for="email" class="form-label">Email address</label>
+                    <input class="form-control" type="email" name="email" placeholder="your@email.com"
+                        aria-describedby="emailHelp" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div id="uid-form" class="field">
+                    <label for="uid" class="form-label">CO-OP Id</label>
+                    <input class="form-control" type="text" name="uid" placeholder="CO-OP Id" required>
+                </div>
+
+                <div id="pw-form" class="field">
+                    <label for="pw" class="form-label">Password</label>
+                    <input class="form-control" type="password" name="pw" placeholder="Password" required>
+                </div>
+
+                <div id="verify-form" class="field">
+                    <label for="verify" class="form-label">Re-type Password</label>
+                    <input class="form-control" type="password" name="verify" placeholder="Password" required>
+                </div>
+            </div>
+            <h4 class="mb-3">Select your avatar</h4>
+            <div class="container avatar-selection">
+                {% for i in range(avatars | length) %}
+                <div class="col m-2">
+                    <img src={{avatars[i]}} class="avatar_pick">
+                    <input type="radio" value={{i}} name="icon" required="required">
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+    <div class="flash-bg container mt-4">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <h4>{{ message }}</h4>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+body {
+    background-color: #414141;
+    margin-bottom: 5em;
+}
+
+nav {
+    background-color: #3700b3;
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    margin-left: right;
+    padding: 0;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: x-large;
+    padding: 2px 5px 2px 0px;
+}
+
+.nav-link:hover {
+    color: #018786;
+}
+
+.primary-bg {
+    text-align: center;
+    background-color: #bb86fc;
+    color: #000;
+    border-radius: 1em;
+    list-style-position: inside;
+}
+
+.primary-variant-bg {
+    text-align: center;
+    background-color: #3700b3;
+    color: #fff;
+    border-radius: 1em;
+    list-style-position: inside;
+}
+
+.secondary-bg {
+    text-align: center;
+    background-color: #03dac6;
+    color: #000;
+    border-radius: 1em;
+    list-style-position: inside;
+}
+
+.flash-bg {
+    text-align: center;
+    background-color: #CF6679;
+    color: #000;
+    border-radius: 1em;
+    margin-top: 2em;
+}
+
+.avatar-icon {
+    border-radius: 2em;
+    height: 50px;
+    width: 50px;
+}
+
+.container ul {
+    display: inline-block;
+    text-align: left;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

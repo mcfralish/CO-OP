@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CO-OP</title>
+    <link rel="icon" href="/static/imgs/co-op.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/style.css' )}} />
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/coop.css' )}} />
+
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="/static/js/jquery-ui.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" -->
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+    <script src="/static/js/app.js"></script>
+
+    <script>
+        $(function () {
+            var authenticated = '{{authenticated|tojson}}';
+            console.log(authenticated)
+
+            if (authenticated == "true") {
+                $("#create").load("create");
+            }
+            else {
+                document.getElementById('create').innerHTML = "<div class='container primary-bg mt-5 p-2'><h3>If you would like to add a new Co-op please <a href='signIn'>sign in.</a></h3></div>";
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="create"></div>
+    <div class="container">
+        <div class="btn-group top-50 start-50 translate-middle mt-5" role="group">
+            {% for category in categories %}
+            <button type="button" class="btn" onclick=showCategory(category)>{{category}}</button>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="coop-query"></div>
+</body>
+
+</html>

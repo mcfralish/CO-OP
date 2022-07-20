@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CO-OP | Sign In</title>
+    <link rel="icon" href="/static/imgs/co-op.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/style.css' )}} />
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/checklist.css' )}} />
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        $(function () {
+            $("#header").load("header");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container primary-bg mt-5 p-4">
+        <h2>Required Components:</h2>
+        <div class="checklist mt-4" id="feature">
+            <h4>Feature Components</h4>
+            <div>
+                <input type="checkbox" id="database" class="form-check-input" checked readonly>
+                <label for="database"><b><a href="co-ops">Database Usage</a></b> – At least one page that pulls
+                    information from a custom
+                    database
+                    table.</label>
+
+                <p class="mt-2 ms-4 mb-2">I used the database to store and retrieve User information as well as on the
+                    Cooperatives page to store Worker Cooperative info.</p>
+            </div>
+
+            <div>
+                <input type="checkbox" id="ajax" class="form-check-input" checked readonly>
+                <label for="ajax"><b>Ajax usage</b> – At least one page that uses ajax to update the information on
+                    the
+                    page.</label>
+                <p class="mt-2 ms-4 mb-3">I did use Ajax on my site to retrieve the header bar, however it does not
+                    necessarily update information in real-time.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="theme" class="form-check-input" checked readonly>
+                <label for="theme"><b>Theme</b> – All pages on the website have to have an overall theme (similar
+                    look and
+                    feel) that make the site consistent.</label>
+                <p class="mt-2 ms-4 mb-3">My site features information about worker cooperatives and uses a consistnat
+                    theme and color pallete throughout.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="library" class="form-check-input" checked readonly="">
+                <label for="library"><b>New Library Usage</b> – At least one page needs to use a library or other site
+                    integration that we have not used before in class.</label>
+                <p class="mt-2 ms-4 mb-3">My site uses flask as a framework, which is a bit more than a library. It also
+                    uses flask sql alchemy for db management. I also used some other Python utility libraries.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="javascript" class="form-check-input" checked readonly="">
+                <label for="javascript"><b>Javascript Usage</b> – Use javascript or a javascript library to add dynamic
+                    functionality to a page. This could be warning messages, information changes, etc.</label>
+                <p class="mt-2 ms-4 mb-3">This site uses baseline javascript functions and the jQuery library to
+                    retrieve the header bar information.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="membership" class="form-check-input" readonly="">
+                <label for="membership"><b><a href="coops">Membership Area</a></b> – Have part of your site that only a
+                    user that is logged
+                    in
+                    can
+                    use that portion of your site</label>
+                <p class="mt-2 ms-4 mb-3">This site uses a Member's Only area on the Cooperatives page where member's
+                    can add additional co-ops to the list of listed co-ops.</p>
+            </div>
+            <div>
+                <input type="checkbox" id="general" class="form-check-input" readonly="">
+                <label for="general"><b>General User</b> – support and create a user to your system that has login:
+                    demouser
+                    and password: ThisIsForWPClass and can access the membership area.</label>
+                <p class="mt-2 ms-4 mb-3">I have created a user with the user name as demo and the password is
+                    ThisIsForWPClass</p>
+            </div>
+        </div>
+        <div id="page" class="checklist mt-4">
+            <h4>Page Components</h4>
+            <div id="checklist-page" class="mt-2">
+                <h5><a href="checklist">Checklist Page</a></h5>
+                <input type="checkbox" id="cl1" class="form-check-input" checked readonly="">
+                <label for="cl1">The checklist of all the items that are part of the site and the page where they
+                    are being demonstrated.</label>
+            </div>
+            <div id="site-description" class="mt-2">
+                <h5><a href="site-description">Site Description Page</a></h5>
+                <div>
+                    <input type="checkbox" id="sd1" class="form-check-input" checked readonly="">
+                    <label for="sd1">Describe who are the users of your site.</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sd2" class="form-check-input" checked readonly="">
+                    <label for="sd2">What is it that you want your users to get out of using the site?</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sd3" class="form-check-input" checked readonly="">
+                    <label for="sd3">What problem are you trying to solve for the users of the site?</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sd4" class="form-check-input" checked readonly="">
+                    <label for="sd4">What are the actions that you want the users to take once they have used your
+                        site?</label>
+                </div>
+            </div>
+            <div id="about-us" class="mt-2">
+                <h5><a href="about">About Us Page</a></h5>
+                <div>
+                    <input type="checkbox" id="ab1" class="form-check-input" checked readonly="">
+                    <label for="ab1">Section 1 – About who you are</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="ab2" class="form-check-input" checked readonly="">
+                    <label for="ab2">Section 2 – Project Description and why you choose this project</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="ab3" class="form-check-input" checked readonly="">
+                    <label for="ab3">Section 3 – Description of technology used for your site</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="ab4" class="form-check-input" checked readonly="">
+                    <label for="ab4">Section 4 – What have you learned in this class?</label>
+                </div>
+            </div>
+            <div id="homepage" class="mt-2">
+                <h5><a href="/">Homepage</a></h5>
+                <div>
+                    <input type="checkbox" id="hp1" class="form-check-input" checked readonly="">
+                    <label for="hp1">Initial Page needs to set up what the site is about and speak to the users of
+                        the site.</label>
+                </div>
+            </div>
+        </div>
+        <div id="additional" class="checklist mt-4">
+            <h4>Additional Requirements</h4>
+            <div>
+                <input type="checkbox" id="ad1" class="form-check-input" checked readonly="">
+                <label for="ad1">The pages not in the membership area have to be accessible by anyone on the internet.
+                </label>
+            </div>
+            <div>
+                <input type="checkbox" id="ad2" class="form-check-input" readonly="">
+                <label for="ad2">You can use the AWS platform but don’t have to.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ad3" class="form-check-input" checked readonly="">
+                <label for="ad3">The website must be new and built during the weeks of the final project.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="ad4" class="form-check-input" checked readonly="">
+                <label for="ad4">Get an account on <a target="_blank" href="https://uptimerobot.com/">uptime
+                        robot</a>.</label>
+            </div>
+        </div>
+
+        <div class="checklist-footer">
+            <p></p>
+        </div>
+    </div>
+</body>
+
+</html>

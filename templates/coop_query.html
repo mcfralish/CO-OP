@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<div class="container mt-5 p-2" id="coop-cards">
+    {% for coop in coops %}
+    <div class="card secondary-bg" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{coop.name}}</h5>
+            <p class="card-text">{{coop.category}}</p>
+            <p class="card-text">{{coop.city}}, {{coop.state}}</p>
+            <p class="card-text">{{coop.description}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</html>

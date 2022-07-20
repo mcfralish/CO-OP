@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CO-OP</title>
+    <link rel="icon" href="/static/imgs/co-op.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/style.css' )}} />
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/index_style.css' )}} />
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        $(function () {
+            $("#header").load("header");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="flash-bg">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <h4>{{ message }}</h4>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <div class="top container">
+        <div class="container p-2 top-text primary-bg m-custom">
+            <h1>What is a Worker Co-op?</h1>
+            <br>
+            <p>
+                A worker cooperative is a values-driven business that puts worker and community benefit at the core
+                of
+                its
+                purpose. The two central characteristics of worker cooperatives are:
+            </p>
+            <ul>
+                <li>workers own the business and they participate in its financial success on the basis of their
+                    labor
+                    contribution to the cooperative </li>
+                <li>workers have representation on and vote for the board of directors, adhering to the principle of
+                    one
+                    worker, one vote</li>
+            </ul>
+            <br>
+            <p>
+                In addition to their economic and governance participation, worker-owners often manage the day-to-day
+                operations
+                through various management structures.
+            </p>
+        </div>
+        <div class="mt-5 p-2 ml-5">
+            <img id="hres-img" src=" /static/imgs/max_res_graphic.jpg" class="top-graphic center">
+        </div>
+    </div>
+    <div class="container primary-bg mt-5 p-2 middle-text">
+        <h4>Check out some popular Co-ops on this site.</h4>
+    </div>
+    <div class="container mt-5">
+        {% for i in range(display_ids | length) %}
+        <div class="card secondary-bg" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{display_names[i]}}</h5>
+                <p class="card-text">{{display_categories[i]}}</p>
+                <p class="card-text">{{display_descriptions[i]}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <div class="container primary-bg mt-5 p-2 bottom-text">
+        <h4 class="index-header">A brief history of worker cooperatives in the United States</h4>
+        <div class="index-text">
+            <p>Though we don’t yet have comprehensive data on the nature and scope of worker cooperatives in the U.S.,
+                our
+                research has verified 465 worker cooperatives in the United States. These democratic workplaces employ
+                around 7,000 people and generate over $550 million in annual revenues. The number of worker cooperatives
+                has
+                grown steadily over the past 20 years, and is made up of both well-established businesses and new,
+                growing
+                ones, increasingly including some businesses that have been sold to their employees by their owners.
+            </p>
+            <br>
+            <p>Any business can be a worker-owned and -controlled business. In the U.S., worker cooperatives tend to be
+                concentrated in the service and retail sectors. Common industries include:
+            </p>
+            <ul>
+                <li>accomodations and food service</li>
+                <li>health care</li>
+                <li>manufacturing and engineering</li>
+                <li>technology</li>
+                <li>design</li>
+            </ul>
+            <p>Many of the worker cooperatives in existence today were inspired by the Mondragon Cooperatives in Spain,
+                which enabled the Basques to lift themselves out of poverty and build what is today Spain’s 7th largest
+                corporation, a worker cooperative.
+            </p>
+
+            <p>Worker cooperatives are currently experiencing a surge in popularity, marked by industry and sector
+                concentrations and the growth of a support infrastructure that includes financing, technical assistance
+                providers and trade associations at the local, regional and national levels. Interest in worker
+                cooperatives
+                as a job creation and wealth-building strategy is also on the rise, with community organizations,
+                cities,
+                and small business advocates seeing potential in the form to build a more inclusive economy.
+            </p>
+
+            <p>This recent growth in the worker cooperative sector can be traced back to the 1970s and 1980s, when all
+                of
+                today’s largest worker cooperatives were founded, as part of an explosion in alternative economic forms.
+                Those cooperatives that survived have thrived, and have helped seed new growth through investment of
+                capital
+                and expertise in a second wave of worker cooperative development starting in the late 1990s. By 2000,
+                several worker cooperative development organizations had begun to have success using the form as means
+                to
+                create good jobs for low- and moderate-income workforces, from home care to housecleaning.
+            </p>
+
+            <p>In 2004, the U.S. Federation of Worker Cooperatives (USFWC) was formed as the national membership
+                organization for worker cooperatives, an outgrowth of local and regional organizing across the country.
+                In
+                2013, the USFWC launched the Democracy at Work Institute,to advance a strategic vision for growth in the
+                worker cooperative sector, and to expand the promise of worker cooperatives to new communities while
+                keeping
+                this new growth grounded in worker cooperatives themselves.
+            </p>
+            <br>
+            <br>
+            <p>This information is taken from <a target="_blank"
+                    href="https://institute.coop/what-worker-cooperative">Democracy at Work
+                    Institute</a>.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

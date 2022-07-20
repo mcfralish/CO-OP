@@ -1,0 +1,17 @@
+#profile-pic {
+    height: 10em;
+    width: 10em;
+    border-radius: 5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#section-1-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+p {
+    margin-top: 1em;
+    text-align: left;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CO-OP</title>
+    <link rel="icon" href="/static/imgs/co-op.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/style.css' )}} />
+    <link rel="stylesheet" href={{ url_for('static' , filename='css/about.css' )}} />
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        $(function () {
+            $("#header").load("header");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="section-1" class="container primary-bg mt-5 p-2">
+        <h3>Section 1 – About who I am</h3>
+        <div id="section-1-content">
+            <p>
+                My name is Michael Fralish. I am graduating senior at Georgia State University. As a 32-year-old
+                student, I
+                have the unique perspective of pursuing my secondary education after having some life experience. I am a
+                six
+                year United States Air Force veteran (2010-2016). I worked as an air traffic controller during my tenure
+                in
+                the military and for two years following, working in Lexington, KY, as well as a contractor with the DoD
+                in
+                Afghanistan for one year. While enrolled at GSU, I have worked as a facility coordinator at a local
+                hospice.
+                As I look to the very near future, I will be graduating following this semester, and am currently
+                looking
+                for employment as a software engineer in Las Vegas, NV.
+            </p>
+            <img id="profile-pic" src="/static/imgs/profile.jpg">
+        </div>
+    </div>
+    <div id="section-2" class="container primary-bg mt-5 p-2">
+        <h3>Section 2 – Project Description and why you choose this project</h3>
+        <p>
+            As I look towards future employment, it is important to me to find a company that I can be a part of that is
+            not only willing to pay me a fair wage, but also one that I can morally stand behind. In recent years, I
+            have become convinced that there has to be a better way for our world to exist than the giant pyramid scheme
+            of capitalsm. When I heard about worker cooperatives I knew that this was a way forward. I hope to be able
+            to work for one in the futre and to spread the word to others who may be looking for a better way.
+        </p>
+    </div>
+    <div id="section-3" class="container primary-bg mt-5 p-2">
+        <h3>Section 3 – Description of technology used for your site</h3>
+        <p>
+            In this project I created a pretty standard Flask app. Flask is a python framwork that I am familiar with
+            having created a few other apps with this software. I am hosting this site on heroku, as well as using their
+            database service. I am using Flask SQLAlchemy to interpret SQL Queries via Python. I used jQuery and
+            Bootstrap for formatting and effect.
+        </p>
+    </div>
+    <div id="section-4" class="container primary-bg mt-5 p-2">
+        <h3>Section 4 – What have you learned in this class</h3>
+        <p>
+            Web Programming has familiarized me with a few new technologies that I intend to add to my available tech
+            stack. I used PHP for the first time in this course, as well as worked with javascript libraries that I had
+            no previous exposure to. I appreciate the passion for learning that Dr. Joseph has. His lectures are
+            atypical in that rather than focusing on the technicality he wants to make sure that his students know how
+            to learn. Dr. Joseph encourages students to work with content that they can find passion for and that they
+            enjoy.
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+.top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+}
+
+.top-graphic {
+    float: right;
+    padding: 1em;
+}
+
+.top-text {
+    text-align: left;
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.middle-text {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottom-text {
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.index-header {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index-text a {
+    color: #03DAC6;
+}
+
+.index-text a:hover {
+    color: #3700b3;
+}
+
+.m-custom {
+    margin-top: 5em;
+}
+
+#hres-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 2em;
+}
