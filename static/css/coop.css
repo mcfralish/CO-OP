@@ -1,0 +1,42 @@
+.cat-btns {
+    background-color: #018786;
+}
+
+.cat-btn {
+    background-color: #3700b3;
+    border: 1px solid black;
+    color: #FFF;
+}
+
+.cat-btn:hover {
+    background-color: #018786;
+}
+
+.cat-btn:checked {
+    background-color: #018786;
+}
+
+.coop-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 2em;
+    margin: auto;
+    width: 65%;
+}
+
+.create-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.create-button {
+    background-color: #03DAC6;
+}
+
+.create-button:hover {
+    background-color: #018786;
+}
+
+.field {
+    margin: 1em;
+}

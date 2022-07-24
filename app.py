@@ -1,4 +1,5 @@
 import email
+from operator import mod
 import os
 import random
 from flask import Flask, flash, render_template, redirect, request, json
@@ -123,34 +124,13 @@ def index():
 
     displayed_coops = random.sample(all_coops, upto3)
 
-    authenticated = current_user.is_authenticated
-    display_ids = []
-    display_names = []
-    display_categories = []
-    display_descriptions = []
-
-    for i in range(upto3):
-        display_ids.append(displayed_coops[i].id)
-        display_names.append(displayed_coops[i].name)
-        display_categories.append(displayed_coops[i].name)
-        display_descriptions.append(displayed_coops[i].description)
-
-    return render_template(
-        "index.html",
-        display_ids=display_ids,
-        display_names=display_names,
-        display_categories=display_categories,
-        display_descriptions=display_descriptions,
-    )
+    return render_template("index.html", coops=displayed_coops)
 
 
 @app.route("/header")
 def header():
     authenticated = current_user.is_authenticated
-    print(current_user.is_authenticated)
-
     avatar_path = None
-
     if authenticated:
         avatar_path = Users.query.filter_by(id=current_user.id).first().icon
     return render_template(
@@ -226,7 +206,9 @@ def logout():
 @app.route("/co-ops")
 def coops():
     authenticated = current_user.is_authenticated
-    return render_template("coops.html", authenticated=True, categories=categories)
+    return render_template(
+        "coops.html", authenticated=authenticated, categories=categories
+    )
 
 
 @app.route("/create", methods=["GET", "POST"])
@@ -239,7 +221,8 @@ def create():
             category=data["category"],
             city=data["city"],
             state=data["state"],
-            link="link",
+            link=data["link"],
+            pic_link=data["pic-link"],
         )
 
         db.session.add(new_coop)
@@ -249,12 +232,15 @@ def create():
     return render_template("create.html", states=states, categories=categories)
 
 
-@app.route("/coop_query", methods=["GET", "POST"])
+@app.route("/coop_query", methods=["GET"])
 def coop_query():
     category = request.args["category"]
     if category == "all":
         coops = Coops.query.all()
-    coops = Coops.query.all()
+    else:
+        coops = Coops.query.filter_by(category=category).all()
+
+    coops.sort(key=lambda x: x.name)
     return render_template("coop_query.html", coops=coops)
 
 
@@ -265,7 +251,7 @@ def checklist():
 
 @app.route("/description")
 def site_description():
-    return render_template("site_description.html")
+    return render_template("description.html")
 
 
 @app.route("/about")

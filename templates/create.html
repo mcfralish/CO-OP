@@ -1,45 +1,52 @@
-<div id="register" class="container primary-bg mt-5 p-2">
+<div id="register" class="container-sm primary-bg mt-5 p-2">
     <h3 class="mt-4">Add your Worker Cooperative below if you don't see it on our list!</h3>
     <form action="/create" method="POST">
-        <div id="name-form" class="field">
-            <label for="name" class="form-label">Co-op Name:</label>
-            <input class="form-control" id="name" type="text" name="name" placeholder="Name" required>
-        </div>
+        <div class="create-form">
+            <div id="name-form" class="field">
+                <label for="name" class="form-label">Co-op Name:</label>
+                <input class="form-control" id="name" type="text" name="name" placeholder="Name" required>
+            </div>
 
+            <div id="category-form" class="field">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category" name="category" required>
+                    {% for i in range(categories | length) %}
+                    <option value="{{categories[i]}}">{{categories[i]}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div id="city-form" class="field">
+                <label for="city" class="form-label">City:</label>
+                <input class="form-control" type="text" name="city" placeholder="City" required>
+            </div>
+
+            <div id="state-form" class="field">
+                <label for="state" class="form-label">State</label>
+                <select class="form-select" id="state" name="state" required>
+                    {% for i in range(states | length) %}
+                    <option value="{{states[i]}}">{{states[i]}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div id="link-form" class="field">
+                <label for="link" class="form-label">Link to Website</label>
+                <input class="form-control" type="text" name="link" placeholder="Link to Website" required>
+            </div>
+
+            <div id="pic-link-form" class="field">
+                <label for="pic-link" class="form-label">Link to Picture/Logo</label>
+                <input class="form-control" type="text" name="pic-link" placeholder="Link to Picture/Logo" required>
+            </div>
+
+        </div>
         <div id="description-form" class="field">
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" id="description" name="description" placeholder="Description Here"
                 required></textarea>
         </div>
 
-        <div id="category-form" class="field">
-            <label for="category" class="form-label">Category</label>
-            <select class="form-select" id="category" name="category" required>
-                {% for i in range(categories | length) %}
-                <option value="{{categories[i]}}">{{categories[i]}}</option>
-                {% endfor %}
-            </select>
-        </div>
-
-        <div id="city-form" class="field">
-            <label for="city" class="form-label">City:</label>
-            <input class="form-control" type="text" name="city" placeholder="City" required>
-        </div>
-
-        <div id="state-form" class="field">
-            <label for="state" class="form-label">State</label>
-            <select class="form-select" id="state" name="state" required>
-                {% for i in range(states | length) %}
-                <option value="{{states[i]}}">{{states[i]}}</option>
-                {% endfor %}
-            </select>
-        </div>
-
-        <div id="link-form" class="field">
-            <label for="link" class="form-label">Link</label>
-            <input class="form-control" type="text" name="link" placeholder="Link to Website" required>
-        </div>
-
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn create-button">Submit</button>
     </form>
 </div>

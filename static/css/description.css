@@ -1,0 +1,26 @@
+.description-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.description-block img {
+    border-radius: 2em;
+}
+
+#max-res {
+    height: 90%;
+    width: 50%;
+    margin: auto;
+}
+
+#sickness {
+    margin: auto;
+    height: 80%;
+    /* height: 115%; */
+}
+
+#cycle {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,6 +1,8 @@
 body {
     background-color: #414141;
     margin-bottom: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
 }
 
 nav {
@@ -46,6 +48,24 @@ nav img {
     color: #000;
     border-radius: 1em;
     list-style-position: inside;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    text-align: left;
+}
+
+.card-link {
+    text-align: center;
+    color: #3700b3;
+}
+
+.list-group-item {
+    background-color: #03dac6;
 }
 
 .flash-bg {

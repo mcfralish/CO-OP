@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-<div class="container mt-5 p-2" id="coop-cards">
+<div class="container mt-5 p-2 coop-cards" id="coop-cards">
     {% for coop in coops %}
     <div class="card secondary-bg" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{coop.name}}</h5>
-            <p class="card-text">{{coop.category}}</p>
-            <p class="card-text">{{coop.city}}, {{coop.state}}</p>
+            <img src={{coop.pic_link}} class="card-img-top">
+            <h5 class="card-title" style="font-size: 20pt;"><b>{{coop.name}}</b></h5>
             <p class="card-text">{{coop.description}}</p>
         </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{coop.category}}</li>
+            <li class="list-group-item">{{coop.city}}, {{coop.state}}</li>
+        </ul>
+        <a href={{coop.link}} class="card-link" target="_blank">{{coop.link}}</a>
     </div>
     {% endfor %}
 </div>

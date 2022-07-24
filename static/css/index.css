@@ -10,7 +10,7 @@
 }
 
 .top-text {
-    text-align: left;
+    text-align: justify;
     float: left;
     margin-top: auto;
     margin-bottom: auto;
@@ -34,13 +34,8 @@
     margin-bottom: 2em;
 }
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .index-text a {
-    color: #03DAC6;
+    color: #03dac6
 }
 
 .index-text a:hover {
@@ -51,8 +46,17 @@
     margin-top: 5em;
 }
 
-#hres-img {
-    height: 100%;
+#fist {
+    height: 85%;
     width: 100%;
-    border-radius: 2em;
+    border-radius: 20em;
+    margin-left: em;
+    margin-top: 20%;
+}
+
+.coop-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    width: 50%;
 }

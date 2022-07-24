@@ -22,7 +22,4 @@ class Coops(db.Model):
     city = db.Column(db.String(120), nullable=False)
     state = db.Column(db.String(120), nullable=False)
     link = db.Column(db.String(120), nullable=False)
-
-
-# class Authorized_Users(db.Model):
-#     id = db.Column()
+    pic_link = db.Column(db.String(999), nullable=False)

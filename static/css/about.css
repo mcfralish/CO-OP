@@ -11,6 +11,10 @@
     grid-template-columns: 2fr 1fr;
 }
 
+#green_workers {
+    border-radius: 2em;
+}
+
 p {
     margin-top: 1em;
     text-align: left;

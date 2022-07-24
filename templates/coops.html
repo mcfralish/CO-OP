@@ -13,10 +13,6 @@
     <link rel="stylesheet" href={{ url_for('static' , filename='css/coop.css' )}} />
 
     <script src="/static/js/jquery-3.6.0.min.js"></script>
-    <!-- <script src="/static/js/jquery-ui.min.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" -->
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-    </script>
     <script src="/static/js/app.js"></script>
 
     <script>
@@ -31,6 +27,7 @@
                 document.getElementById('create').innerHTML = "<div class='container primary-bg mt-5 p-2'><h3>If you would like to add a new Co-op please <a href='signIn'>sign in.</a></h3></div>";
             }
         });
+
     </script>
 </head>
 
@@ -38,10 +35,13 @@
     <div id="header"></div>
     <div id="create"></div>
     <div class="container">
-        <div class="btn-group top-50 start-50 translate-middle mt-5" role="group">
-            {% for category in categories %}
-            <button type="button" class="btn" onclick=showCategory(category)>{{category}}</button>
-            {% endfor %}
+        <div class="btn-group top-50 start-50 translate-middle mt-5 cat-btns" role="group">
+            <button type="button" class="btn cat-btn" onclick=showAll() id="all">All</button>
+            <button type="button" class="btn cat-btn" onclick=showAFS()>Accomodations & Food Service</button>
+            <button type="button" class="btn cat-btn" onclick=showHC()>Health Care</button>
+            <button type="button" class="btn cat-btn" onclick=showME()>Manufacturing & Engineering</button>
+            <button type="button" class="btn cat-btn" onclick=showTech()>Technology</button>
+            <button type="button" class="btn cat-btn" onclick=showDesign()>Design</button>
         </div>
     </div>
     <div id="coop-query"></div>
